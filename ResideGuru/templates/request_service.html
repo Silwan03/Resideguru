@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Request a Service</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="Catering">Catering</option>
+            <option value="Driving">Driving</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Yoga">Yoga Classes</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit Request</button>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Chat with {{ user.username }}</h1>
+<div class="card mb-4">
+    <div class="card-body" style="height: 300px; overflow-y: scroll;">
+        {% for message in messages %}
+            <div class="mb-2">
+                <strong>{{ message.sender.username }}:</strong> {{ message.content }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<form method="POST">
+    <div class="form-group">
+        <label for="content">Message</label>
+        <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Send</button>
+</form>
+{% endblock %}
